@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+opencv-python
+mediapipe
+numpy
+pydantic
+python-multipart
+scipy # For angle calculations if needed, though numpy is often enough
