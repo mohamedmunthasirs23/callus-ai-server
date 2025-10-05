@@ -35,8 +35,7 @@ Deployment	GCP Compute Engine	Demonstrated successful deployment and configurati
 
 The core technical challenge was ensuring reliable pose detection and resolving persistent environment issues during containerization.
 
-**A. T-Pose Detection Logic
-**
+*A. T-Pose Detection Logic*
 
 Approach: The T-Pose was defined not by pixel coordinates but by joint angles and vertical alignment. We calculated the angle formed by the shoulder, elbow, and wrist joints.
 
