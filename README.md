@@ -68,8 +68,10 @@ docker run -d -p 8000:80 --name callus_local_test callus-dance-server:latest
 Test the API: Access http://127.0.0.1:8000/docs in your browser.
 
 **API Endpoint Usage**
-The application provides two endpoints:
+The server provides a straightforward API with two main endpoints for user interaction. 
 
-Endpoint	Method	        Function	               Input                    	             Output
-/health	  GET	    Confirms server is running	      None	                          {"status": "ok", ...}
-/analyze	POST	  Processes the video file    T-pose dance-video.MP4	 JSON summary with poses_detected  ["T-Pose"] and frame details.
+The primary endpoint is the /analyze route, which uses the POST method to process uploaded video data. Clients submit a video file (MP4 or MOV format) as form data to this endpoint. 
+
+In return, the server executes the AI/ML movement analysis pipeline and provides a JSON summary containing detailed frame information and a critical array listing the poses_detected (["T-Pose"]).
+
+For basic connectivity confirmation and monitoring, the server also exposes a /health endpoint accessible via the GET method, which simply returns a status message indicating the server is running ({"status": "ok", ...}).
