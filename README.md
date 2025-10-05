@@ -34,14 +34,15 @@ Deployment	GCP Compute Engine	Demonstrated successful deployment and configurati
 **3. Thought Process and Debugging Insight**
 
 The core technical challenge was ensuring reliable pose detection and resolving persistent environment issues during containerization.
+
+**A. T-Pose Detection Logic
 **
-A. T-Pose Detection Logic****
 
 Approach: The T-Pose was defined not by pixel coordinates but by joint angles and vertical alignment. We calculated the angle formed by the shoulder, elbow, and wrist joints.
 
 Tuning Tolerances: Initial unit tests passed, but real-world video analysis failed due to camera perspective and natural body movement. The solution required tuning the angle and Y-coordinate tolerances to be slightly more permissive (e.g., allowing a ∼30 deviation from a perfect 180 straight arm and a larger vertical displacement tolerance on the Y-axis) before successful detection was achieved.
 
-B. DevOps and Environment Resolution
+**B. DevOps and Environment Resolution**
 
 ModuleNotFoundError: The persistent module import and path issues during local Uvicorn startup were solved by initially flattening the file structure to resolve conflicts, then restoring the package structure for the final Docker image.
 
